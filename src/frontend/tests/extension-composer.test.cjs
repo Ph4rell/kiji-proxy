@@ -66,7 +66,7 @@ function fixture({ legacy = false, split = false, unrelatedForm = false, respons
     listeners[type]?.(event);
     return event;
   }
-  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../../../chrome-extension/content.js'), 'utf8'), {
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../../../browser-extension/content.js'), 'utf8'), {
     document: { readyState: 'complete', activeElement: null, body: root,
       getElementById: id => ids[id], createElement: tag => new Element(tag),
       querySelectorAll: s => root.querySelectorAll(s),
